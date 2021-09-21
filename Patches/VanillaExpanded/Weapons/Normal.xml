@@ -3,14 +3,14 @@
 
     <Operation Class="PatchOperationFindMod">
         <mods>
-            <li>Vanilla Factions Expanded - Settlers</li>
+            <li>Vanilla Weapons Expanded</li>
         </mods>
         <match Class="PatchOperationSequence">
             <success>Always</success>
             <operations>
-				<!-- projectiles -->
+                <!-- projectiles -->
                 <li Class="PatchOperationAddModExtension">
-                    <xpath>/Defs/ThingDef[defName="Bullet_Shotgun"]</xpath>
+                    <xpath>/Defs/ThingDef[defName="VWE_Bullet_SawedOffShotgun"]</xpath>
                     <value>
                         <li Class="ProperShotguns.ShotgunExtension">
                             <pelletCount>6</pelletCount>
@@ -18,22 +18,22 @@
                     </value>
 				</li>
 				
-				<!-- textures -->
-				<li Class="PatchOperationReplace">
-                    <xpath>/Defs/ThingDef[defName="Bullet_Shotgun"]/graphicData/texPath</xpath>
+                <!-- textures -->
+                <li Class="PatchOperationReplace">
+                    <xpath>/Defs/ThingDef[defName="VWE_Bullet_SawedOffShotgun"]/graphicData/texPath</xpath>
                     <value>
                         <texPath>Things/Projectile/Bullet_Small</texPath>
                     </value>
                 </li>
-				
-                <!-- general verb patching -->
+
+                <!-- verbs -->
                 <li Class="PatchOperationReplace">
-                    <xpath>/Defs/ThingDef[defName="VFES_Gun_DoubleBarreledShotgun"]/verbs/li/verbClass</xpath>
+                    <xpath>/Defs/ThingDef[defName="VWE_SawedOffShotgun"]/verbs/li/verbClass</xpath>
                     <value>
                         <verbClass>ProperShotguns.Verb_ShootShotgun</verbClass>
                     </value>
                 </li>
-
+				
             </operations>
         </match>
     </Operation>

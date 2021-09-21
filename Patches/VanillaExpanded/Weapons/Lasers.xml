@@ -31,6 +31,7 @@
                 </li>
 
                 <!-- ===== Laser Shotgun ===== -->
+				<!-- Damage x*3+4? x is original -->
                 <li Class="PatchOperationReplace">
                     <xpath>/Defs/ThingDef[defName="VWEL_Bullet_LaserShotgun"]/projectile/damageAmountBase</xpath>
                     <value>
