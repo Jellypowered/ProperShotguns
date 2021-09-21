@@ -1,5 +1,8 @@
 ﻿################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
+1.0/
+1.1/
+Source/.vs/
+Source/ProperShotguns/obj/
 
-/1.1/Assemblies/0Harmony.dll
