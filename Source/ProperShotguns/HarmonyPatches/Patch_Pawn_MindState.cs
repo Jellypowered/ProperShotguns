@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Reflection;
-using System.Reflection.Emit;
-using System.Runtime.CompilerServices;
+﻿using HarmonyLib;
 using RimWorld;
 using Verse;
 using Verse.AI;
-using HarmonyLib;
-using UnityEngine;
 
 namespace ProperShotguns
 {
@@ -27,11 +18,11 @@ namespace ProperShotguns
                 // If the game's attempting to make them flee in the same tick that their flee job started, return false
                 if (p.CurJobDef == JobDefOf.Flee && p.CurJob.startTick == Find.TickManager.TicksGame)
                     __result = false;
-                    
+
             }
 
         }
 
-	}
+    }
 
 }

@@ -1,16 +1,15 @@
-﻿using System;
-using Verse;
+﻿using Verse;
 
 namespace ProperShotguns
 {
-	public class ShotgunExtension : DefModExtension
-	{
+    public class ShotgunExtension : DefModExtension
+    {
 
-		private static readonly ShotgunExtension defaultValues = new ShotgunExtension();
+        private static readonly ShotgunExtension defaultValues = new ShotgunExtension();
 
-		public static ShotgunExtension Get(Def def) => def.GetModExtension<ShotgunExtension>() ?? defaultValues;
+        public static ShotgunExtension Get(Def def) => def.GetModExtension<ShotgunExtension>() ?? defaultValues;
 
-		public int pelletCount = 1;
+        public int pelletCount = 1;
 
-	}
+    }
 }

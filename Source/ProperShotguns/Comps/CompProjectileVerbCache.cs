@@ -1,10 +1,9 @@
 ﻿using System;
 using Verse;
-using RimWorld;
 
 namespace ProperShotguns
 {
-	public class CompProjectileVerbCache : ThingComp
+    public class CompProjectileVerbCache : ThingComp
     {
 
         public Type cachedVerbClass;
