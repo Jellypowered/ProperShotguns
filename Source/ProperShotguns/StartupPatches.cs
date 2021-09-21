@@ -10,7 +10,6 @@ namespace ProperShotguns
         static StartupPatches()
         {
             List<ThingDef> thingDefs = DefDatabase<ThingDef>.AllDefsListForReading;
-            //var thingDefs = DefDatabase<ThingDef>.AllDefsListForReading;  //old method. Probably was fine as it. 
             for (int i = 0; i < thingDefs.Count; i++)
             {
                 var tDef = thingDefs[i];
@@ -21,8 +20,7 @@ namespace ProperShotguns
                 {
                     if (tDef.comps == null)
                         tDef.comps = new List<CompProperties>();
-                    tDef.comps.Add(new CompProperties(typeof(CompProjectileVerbCache))); 
-                    //Doesn't seem to actually ever add these. Or my check in Patch_Projectile.cs is just wrong.
+                    tDef.comps.Add(new CompProperties(typeof(CompProjectileVerbCache)));
                 }
             }
         }
