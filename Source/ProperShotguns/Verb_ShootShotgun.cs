@@ -11,7 +11,7 @@ namespace ProperShotguns
         public override void WarmupComplete()
         {
             base.WarmupComplete();
-            if (currentTarget.Thing is Pawn pawn && !pawn.Downed && CasterIsPawn && CasterPawn.skills != null)
+            if (currentTarget.Thing is Pawn pawn && !pawn.Downed && !pawn.IsColonyMech && CasterIsPawn && CasterPawn.skills != null)
             {
                 float baseExp = pawn.HostileTo(caster) ? SkillTuning.XpPerSecondFiringHostile : SkillTuning.XpPerSecondFiringNonHostile;
                 float cycleTime = verbProps.AdjustedFullCycleTime(this, CasterPawn);

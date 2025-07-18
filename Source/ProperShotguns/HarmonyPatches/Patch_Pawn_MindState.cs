@@ -9,16 +9,19 @@ namespace ProperShotguns
     public static class Patch_Pawn_MindState
     {
 
-        [HarmonyPatch(typeof(Pawn_MindState), "CanStartFleeingBecauseOfPawnAction")]
-        public static class CanStartFleeingBecauseOfPawnAction
+        [HarmonyPatch(typeof(Pawn_MindState), "StartFleeingBecauseOfPawnAction")]
+        public static class StartFleeingBecauseOfPawnAction
         {
 
-            public static void Postfix(Pawn p, ref bool __result)
+            public static bool Prefix(Pawn_MindState __instance, Thing instigator)
             {
-                // If the game's attempting to make them flee in the same tick that their flee job started, return false
-                if (p.CurJobDef == JobDefOf.Flee && p.CurJob.startTick == Find.TickManager.TicksGame)
-                    __result = false;
+                Pawn pawn = __instance.pawn;
+                
+                // Block if the pawn just started a Flee Job this tick
+                if (pawn.CurJobDef == JobDefOf.Flee && pawn.CurJob.startTick == Find.TickManager.TicksGame)
+                    { return false; }
 
+                return true; // allow original method to run
             }
 
         }
