@@ -1,14 +1,7 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
-1.0/
-1.1/
-Source/.vs/
-Source/ProperShotguns/obj/
+/.vscode/obj
+/*.sln 
 
-/.vs/ProperShotguns/FileContentIndex
-/.vs/ProperShotguns/v17
-/.vs/VSWorkspaceState.json
-/.vs/slnx.sqlite
-/1.6/Assemblies/0Harmony.dll
-/1.6/Assemblies/0Harmony.pdb
+# /*/Assemblies
+# /*/Assemblies/*.pdb
+# /.vscode
+# /Source
