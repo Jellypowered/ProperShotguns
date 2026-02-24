@@ -97,5 +97,32 @@ namespace ProperShotguns
                 }
             }
         }
+
+        [HarmonyPatch(typeof(Projectile))]
+        [HarmonyPatch("ExtraDamages", MethodType.Getter)]
+        public static class Get_ExtraDamages
+        {
+            public static void Postfix(Projectile __instance, ref IEnumerable<ExtraDamage> __result)
+            {
+                if (!ProperShotgunsSettings.divideSecondaryEffects)
+                    return;
+
+                var verbCache = __instance.TryGetComp<CompProjectileVerbCache>();
+
+                if (ShotgunExtension.Get(__instance.def).pelletCount != 0 && verbCache != null)
+                {
+                    var shotgunExtension = ShotgunExtension.Get(__instance.def);
+
+                    // Divide extra damage amounts and armor pen by pellet count
+                    __result = __result.Select(ed => new ExtraDamage
+                    {
+                        def = ed.def,
+                        amount = Mathf.Max(1, Mathf.RoundToInt(ed.amount / (float)shotgunExtension.pelletCount)),
+                        chance = ed.chance,
+                        armorPenetration = ed.armorPenetration / shotgunExtension.pelletCount
+                    }).ToList();
+                }
+            }
+        }
     }
 }

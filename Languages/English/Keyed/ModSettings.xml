@@ -9,6 +9,6 @@
   <ProperShotguns.ShotgunDamageRounding_Floor_Desc>Pellet damage will always be rounded down.</ProperShotguns.ShotgunDamageRounding_Floor_Desc>
   <ProperShotguns.ShotgunDamageRounding_Ceil>Up</ProperShotguns.ShotgunDamageRounding_Ceil>
   <ProperShotguns.ShotgunDamageRounding_Ceil_Desc>Pellet damage will always be rounded up.</ProperShotguns.ShotgunDamageRounding_Ceil_Desc>
-  <ProperShotguns.DivideSecondaryEffects>Divide armor penetration by pellet count</ProperShotguns.DivideSecondaryEffects>
-  <ProperShotguns.DivideSecondaryEffects_Desc>When enabled, armor penetration is divided among pellets. This prevents shotguns from having unrealistically high armor-piercing capability. Disable this to use vanilla behavior where each pellet has full armor penetration. Note: Special ammunition effects (incendiary, toxic, EMP) still apply per pellet as they are defined in the damage type.</ProperShotguns.DivideSecondaryEffects_Desc>
+  <ProperShotguns.DivideSecondaryEffects>Divide secondary effects by pellet count</ProperShotguns.DivideSecondaryEffects>
+  <ProperShotguns.DivideSecondaryEffects_Desc>When enabled, armor penetration and extra damage (EMP, toxic, etc.) are divided among pellets. This prevents shotguns with special ammunition from being overpowered. Disable this to use vanilla behavior where each pellet applies full secondary effects. Note: Fire chance from incendiary/toxic damage types still applies per pellet.</ProperShotguns.DivideSecondaryEffects_Desc>
 </LanguageData>
