@@ -15,7 +15,7 @@ namespace ProperShotguns
 
             // Patch Yayo's Combat ammo consumption if the mod is loaded
             PatchYayoCombatIfPresent();
-            
+
             // Patch GunControl ammo consumption if the mod is loaded
             PatchGunControlIfPresent();
         }
@@ -141,13 +141,13 @@ namespace ProperShotguns
             {
                 // Find the Patch_VirtualMagazine_Launch class
                 var patchClass = assembly.GetTypes()
-                    .FirstOrDefault(t => t.Name == "Patch_VirtualMagazine_Launch" || 
+                    .FirstOrDefault(t => t.Name == "Patch_VirtualMagazine_Launch" ||
                                         t.FullName?.Contains("Patch_VirtualMagazine_Launch") == true);
 
                 if (patchClass != null)
                 {
                     // Find the Postfix method that consumes ammo
-                    var postfixMethod = patchClass.GetMethod("Postfix", 
+                    var postfixMethod = patchClass.GetMethod("Postfix",
                         BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public);
 
                     if (postfixMethod != null)

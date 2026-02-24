@@ -36,6 +36,13 @@ namespace ProperShotguns
                     damageRoundMode = curOpt;
             }
 
+            options.Gap();
+            options.CheckboxLabeled(
+                "ProperShotguns.DivideSecondaryEffects".Translate(),
+                ref divideSecondaryEffects,
+                "ProperShotguns.DivideSecondaryEffects_Desc".Translate()
+            );
+
             options.End();
             base.Mod.GetSettings<ProperShotgunsSettings>().Write();
         }
@@ -47,8 +54,14 @@ namespace ProperShotguns
                 "damageRoundMode",
                 ShotgunDamageRoundMode.Random
             );
+            Scribe_Values.Look(
+                ref divideSecondaryEffects,
+                "divideSecondaryEffects",
+                true
+            );
         }
 
         public static ShotgunDamageRoundMode damageRoundMode = ShotgunDamageRoundMode.Random;
+        public static bool divideSecondaryEffects = true;
     }
 }
