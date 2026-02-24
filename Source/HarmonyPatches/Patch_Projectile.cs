@@ -116,7 +116,7 @@ namespace ProperShotguns
                 if (projectileDef != null && ShotgunExtension.Get(projectileDef).pelletCount != 0)
                 {
                     var shotgunExtension = ShotgunExtension.Get(projectileDef);
-                    
+
                     // Create a new list with divided damage amounts
                     if (__result != null && __result.Count > 0)
                     {
