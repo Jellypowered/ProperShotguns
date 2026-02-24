@@ -104,9 +104,7 @@ namespace ProperShotguns
         private static void PatchGunControlIfPresent()
         {
             // Check if GunControl is loaded
-            if (ModsConfig.IsActive("Mlie.GunControl") || 
-                ModsConfig.IsActive("GunControl") ||
-                ModsConfig.IsActive("guncontrol"))
+            if (ModsConfig.IsActive("Nas.guncontrol"))
             {
                 try
                 {
