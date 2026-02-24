@@ -1,6 +1,6 @@
 /.vscode/obj
 /*.sln 
-
+/Source/GunControl 
 # /*/Assemblies
 # /*/Assemblies/*.pdb
 # /.vscode
