@@ -17,11 +17,10 @@ namespace ProperShotguns
         {
             public static void Postfix(Projectile __instance, ref int __result)
             {
-                var verbCache = __instance.TryGetComp<CompProjectileVerbCache>();
+                var shotgunExtension = ShotgunExtension.Get(__instance.def);
 
-                if (ShotgunExtension.Get(__instance.def).pelletCount != 0 && verbCache != null)
+                if (shotgunExtension.pelletCount != 0)
                 {
-                    var shotgunExtension = ShotgunExtension.Get(__instance.def);
                     float adjustedDamage = (float)__result / shotgunExtension.pelletCount;
 
                     // Determine pellet damage
@@ -88,11 +87,10 @@ namespace ProperShotguns
                 if (!ProperShotgunsSettings.divideSecondaryEffects)
                     return;
 
-                var verbCache = __instance.TryGetComp<CompProjectileVerbCache>();
+                var shotgunExtension = ShotgunExtension.Get(__instance.def);
 
-                if (ShotgunExtension.Get(__instance.def).pelletCount != 0 && verbCache != null)
+                if (shotgunExtension.pelletCount != 0)
                 {
-                    var shotgunExtension = ShotgunExtension.Get(__instance.def);
                     __result = __result / shotgunExtension.pelletCount;
                 }
             }
@@ -107,11 +105,10 @@ namespace ProperShotguns
                 if (!ProperShotgunsSettings.divideSecondaryEffects)
                     return;
 
-                var verbCache = __instance.TryGetComp<CompProjectileVerbCache>();
+                var shotgunExtension = ShotgunExtension.Get(__instance.def);
 
-                if (ShotgunExtension.Get(__instance.def).pelletCount != 0 && verbCache != null)
+                if (shotgunExtension.pelletCount != 0)
                 {
-                    var shotgunExtension = ShotgunExtension.Get(__instance.def);
 
                     // Divide extra damage amounts and armor pen by pellet count
                     __result = __result.Select(ed => new ExtraDamage

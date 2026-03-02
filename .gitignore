@@ -1,6 +1,8 @@
 /.vscode/obj
 /*.sln 
-/Source/GunControl 
+/Source/GunControl
+/Source/YayoCombatAddon
+/ProperShotguns.wiki
 # /*/Assemblies
 # /*/Assemblies/*.pdb
 # /.vscode
