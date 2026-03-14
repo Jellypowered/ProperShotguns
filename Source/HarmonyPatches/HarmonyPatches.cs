@@ -57,6 +57,10 @@ namespace ProperShotguns
             if (Verb_ShootShotgun.isFiringAdditionalPellets)
                 return;
 
+            // Check if projectile exists (mortars and some weapons might not have defaultProjectile)
+            if (__instance.verbProps?.defaultProjectile == null)
+                return;
+
             var shotgunExtension = ShotgunExtension.Get(__instance.verbProps.defaultProjectile);
             if (shotgunExtension.pelletCount > 1)
             {
