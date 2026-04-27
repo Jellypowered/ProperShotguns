@@ -9,8 +9,6 @@ namespace ProperShotguns
         // This prevents ammo consumption for additional pellets in mods like Yayo's Combat
         public static bool isFiringAdditionalPellets = false;
 
-        protected override int ShotsPerBurst => verbProps.burstShotCount;
-
         public override void WarmupComplete()
         {
             base.WarmupComplete();
