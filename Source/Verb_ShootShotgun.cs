@@ -9,6 +9,18 @@ namespace ProperShotguns
         // This prevents ammo consumption for additional pellets in mods like Yayo's Combat
         public static bool isFiringAdditionalPellets = false;
 
+        protected override int ShotsPerBurst
+        {
+            get
+            {
+                // Keep vanilla weapon burst behavior as a minimum while still allowing
+                // external Harmony patches on the base getter to increase burst count.
+                int baseShots = base.ShotsPerBurst;
+                int configuredShots = verbProps?.burstShotCount ?? 1;
+                return baseShots < configuredShots ? configuredShots : baseShots;
+            }
+        }
+
         public override void WarmupComplete()
         {
             base.WarmupComplete();
